@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "7a94581f-a077-4c28-aea1-64148dc0f1f7",
+		"name": "Internship Employee Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24526571"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\":\"aditya\",\r\n\t\"password\":\"Aditya@900\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/login/login-user",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"login",
+								"login-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Add Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWEiLCJzY29wZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzMxODQxMTM2LCJleHAiOjE3MzE4NTkxMzZ9.R0ExVaxbPyRXuegR2icfRY7XLZnKnu6Vtp69pYoBUmY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shitil\",\r\n    \"name\": \"Shitil Waghmare\",\r\n    \"email\": \"shitilwaghmare@gmail.com\",\r\n    \"dateofBirth\": \"06-05-1993\",\r\n    \"department\": \"Tester\",\r\n    \"password\": \"Aditya@900\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 1            }\r\n            ]\r\n            }\r\n\r\n            ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/admin/add-user",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"add-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "add Role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":6,\r\n    \"name\":\"ROLE_NURSE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/admin/add-role",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"add-role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWEiLCJzY29wZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzMyMjIwNjQyLCJleHAiOjE3MzIyMzg2NDJ9.pWOnFBqHKHxtE7dOKlddBmFgOkmpc7Uh5sQkjSx4Yqw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/admin/delete-user/shitil",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"delete-user",
+								"shitil"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWEiLCJzY29wZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzMyMjI0NTQ5LCJleHAiOjE3MzIyNDI1NDl9.AoWrwV3IYRicw6LOrI_xwhpVvnXuriHv9tuuGeBXTx8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"aditya\",\r\n    \"name\": \"aditya\",\r\n    \"email\": \"adityawaghmare900@gmail.com\",\r\n    \"dateofBirth\": \"31-10-1995\",\r\n    \"department\": \"developer\",\r\n    \"password\": \"$2a$12$bjPDrfhkQcOapRgkua.ddOgvOh/nsICwbn13oQG1CenwMzVclkJiK\",\r\n    \"roles\": [\r\n        {\r\n            \"name\": \"ROLE_ADMIN\"\r\n        }\r\n            ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/admin/update-user",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"update-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/admin/get-user-by-name/amar",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"get-user-by-name",
+								"amar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Roles By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZGl0eWEiLCJzY29wZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzMyMjI1MzU2LCJleHAiOjE3MzIyNDMzNTZ9.M31gdKUUL4uX-icN_ROWdXJuAWsIgmSoAAoIcWfuFR8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/admin/get-role-by-id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"get-role-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "get Employee By Username",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGl0aWwiLCJzY29wZXMiOiJST0xFX0VNUExPWUVFIiwiaWF0IjoxNzMyMjMxMTE2LCJleHAiOjE3MzIyNDkxMTZ9.2PZurXAqqXwR-aRk47VnL1TrW5yIYnzJUc1c7u2f19E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/user/get-user-by-id/shitil",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"user",
+								"get-user-by-id",
+								"shitil"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reporting",
+			"item": [
+				{
+					"name": "Department Wise Distribution",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Salary Report",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Attendance Report",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
